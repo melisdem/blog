@@ -4,38 +4,64 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Blog</title>
-  <link rel="stylesheet" type="text/css" href="reset.css">
-  <link rel="stylesheet" type="text/css" href="-debug.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" type="text/css" href="dfebug.css">
 </head>
 <body>
   <!-- Navbar -->
-  <div class="topnav">
-  <a class="active" href="index.html">Home</a>
-  <a href="about.html">About</a>
-  </div>
-
+  <header>
+    <div class="wrapper">
+      <div class="topnav">
+        <a class="active" href="index.html">Home</a>
+        <a href="about.html">About</a>
+      </div>
+    </div>
+  </header>
   <!-- Posts' List -->
-  <ul id="post">
-    <embed src="test.txt"></embed>
-  </ul>
-
-  <!-- Footer -->
-  <div></div>
-
+  <div class="wrapper">
+    <article class="main">
+      <ul id="post">
+        <li class="post">
+          <h1><a href="posts/show.html">Lorem ipsum dolor sit amet, </a></h1>
+          <time datetime="09-20-2021">Aug. 20,2021</time>
+          <h2 class="definition">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+          consequat.</h2>
+          <div class="tags categories">
+            <ul id="tag">
+              <li><a href="">Tag1</a></li>
+              <li><a href="">Tag2</a></li>
+            </ul>
+            <br>
+            <ul id="cat">
+              <li><a href="">Cat1</a></li>
+              <li><a href="">Cat2</a></li>
+            </ul>
+          </div>
+        </li>
+        <li class="post">
+          <h1><a href="posts/show.html">Lorem ipsum dolor sit amet, </a></h1>
+          <time datetime="09-20-2021">Aug. 20,2021</time>
+          <h2 class="definition">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+          consequat.</h2>
+          <div class="tags categories">
+            <ul id="tag">
+              <li><a href="">Tag1</a></li>
+              <li><a href="">Tag2</a></li>
+            </ul>
+            <br>
+            <ul id="cat">
+              <li><a href="">Cat1</a></li>
+              <li><a href="">Cat2</a></li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </article>
+  </div>
 </body>
 </html>
-<!-- 
-<h1><a href="posts/show.html">The Cosmos</a></h1>
-    <h2>Or to be or not to be</h2>
-    <time datetime="09-20-2021">Aug. 20,2021</time>
 
-    <div class="tags categories">
-      <ul>
-        <li><a href="">Tag1</a></li>
-        <li><a href="">Tag2</a></li>
-      </ul>
-      <ul>
-        <li><a href="">Cat1</a></li>
-        <li><a href="">Cat2</a></li>
-      </ul>
-    </div> -->

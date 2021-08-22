@@ -1,0 +1,94 @@
+/*Reseting */
+:root {font: 20px/1.2 "Garamond", sans-serif;}
+
+body,
+body * {
+  margin: unset;
+  box-sizing: unset;
+  padding: unset;
+  font-size: unset;
+  color: unset;
+  text-decoration: unset;
+}
+
+figure * { display: block; }
+
+ul {
+list-style: none;
+padding: 0px;
+margin: 0px;
+}
+
+/*Navbar*/
+.topnav {
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+.topnav a {
+  float: left;
+  text-align: center;
+  padding: 14px 0px 14px 0px;
+  text-decoration: none;
+}
+header {
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+  margin-bottom: 8px;
+}
+
+/********************************************/
+/*Posts*/
+#post>.post {
+  margin-bottom: 50px;
+}
+
+.wrapper {
+  margin: 0px 10%;
+  padding: 0px 2%;
+}
+
+@media only screen and (max-width: 600px) {
+  .wrapper {
+    margin: 0px;
+    padding: 0px 2%;
+  }
+}
+
+.definition {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+
+/*Text font*/
+h1            {font: 700 2.0rem/1.2 "Roboto";}
+h2            {font: 400 1.5rem/1.2 "Roboto";}
+time          {font: 700 1.0rem/1.2 "Roboto";}
+h3            {font: 700 1.0rem/1.2 "Roboto";}
+p             {font: 400 1.0rem/1.5 "Roboto";}
+figcaption p  {font: 400 1.0rem/1.5 "Roboto";}
+
+
+@media (max-width:  8.5in) { :root { font-size: 18px; } }
+@media (max-width:  5.0in) { :root { font-size: 16px; } }
+
+
+/*Tags and Categories*/
+.tags {
+  display: flex;
+}
+.tags img {
+  padding: 0.75rem;
+  width: 1.50rem;
+  height: 1.50rem;
+}
+#tag>li {
+  float: left;
+  margin-bottom: 5px;
+}
+#cat>li {
+  float: left;
+  margin-bottom: 5px;
+}
