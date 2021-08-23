@@ -21,16 +21,20 @@ margin: 0px;
 
 /*Navbar*/
 .topnav {
-  display: flex;
-  justify-content: space-between;
   overflow: hidden;
   margin-bottom: 10px;
 }
 .topnav a {
-  float: left;
-  text-align: center;
-  padding: 14px 0px 14px 0px;
+  float: right;
+  padding: 14px 3px 14px 3px;
   text-decoration: none;
+}
+.home {
+  position: absolute;
+  float: left;
+}
+.ref {
+  margin-right: 4%;
 }
 header {
   border-top: 1px solid;
@@ -38,7 +42,6 @@ header {
   margin-bottom: 8px;
 }
 
-/********************************************/
 /*Posts*/
 #post>.post {
   margin-bottom: 50px;
@@ -52,7 +55,6 @@ header {
 @media only screen and (max-width: 600px) {
   .wrapper {
     margin: 0px;
-    padding: 0px 2%;
   }
 }
 
@@ -61,6 +63,28 @@ header {
   margin-bottom: 10px;
 }
 
+/*Show page*/
+.header {
+  margin-top: 3%;
+  margin-bottom: 3%;
+}
+.content p {
+  margin-bottom: 3%;
+}
+
+/*Figures*/
+
+figure {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;  
+}
+
+
+size-align {  }
+
+size-default {  }
 
 /*Text font*/
 h1            {font: 700 2.0rem/1.2 "Roboto";}
