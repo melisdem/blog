@@ -1,0 +1,73 @@
+/*Light_mode*/
+
+body {
+  background-color: #FFFBF7;
+  color: #201C18;
+}
+
+.topnav, h1 {
+  color: #4F3F16;
+}
+
+time {
+  color: #342807;
+}
+
+/*Dark_Mode*/
+
+body.dark-theme {
+  background-color: #201C18;
+  color: #C6B5A6;
+}
+
+body.dark-theme .topnav {
+  color: #D3C8AB;
+}
+body.dark-theme h1 {
+  color: #D3C8AB;
+}
+
+body.dark-theme time {
+  color: #A58F7D;
+}
+
+
+@media (prefers-color-scheme: dark) {
+/*Light_mode*/
+
+  body.light-theme {
+    background-color: #FFFBF7;
+    color: #201C18;
+  }
+
+  body.light-theme .topnav {
+    color: #4F3F16;
+  }
+
+  body.light-theme h1 {
+    color: #4F3F16;
+  }
+
+  body.light-theme time {
+    color: #342807;
+  }
+
+  /*Dark_Mode*/
+
+  body. {
+    background-color: #201C18;
+    color: #C6B5A6;
+  }
+
+  body .topnav {
+    color: #D3C8AB;
+  }
+  body h1 {
+    color: #D3C8AB;
+  }
+
+  time {
+    color: #A58F7D;
+  }
+
+}
