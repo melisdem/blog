@@ -33,6 +33,23 @@ body.dark-theme time {
 
 
 @media (prefers-color-scheme: dark) {
+  /*Dark_Mode*/
+
+  body {
+    background-color: #201C18;
+    color: #C6B5A6;
+  }
+
+  body .topnav {
+    color: #D3C8AB;
+  }
+  body h1 {
+    color: #D3C8AB;
+  }
+
+  time {
+    color: #A58F7D;
+  }
 /*Light_mode*/
 
   body.light-theme {
@@ -52,22 +69,5 @@ body.dark-theme time {
     color: #342807;
   }
 
-  /*Dark_Mode*/
-
-  body. {
-    background-color: #201C18;
-    color: #C6B5A6;
-  }
-
-  body .topnav {
-    color: #D3C8AB;
-  }
-  body h1 {
-    color: #D3C8AB;
-  }
-
-  time {
-    color: #A58F7D;
-  }
 
 }
