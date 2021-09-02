@@ -19,7 +19,17 @@ padding: 0px;
 margin: 0px;
 }
 
+button {
+  border: none;
+  background: transparent;
+  outline: none;
+}
+
 /*General Alignment*/
+body {
+  overflow: overlay;
+/*  transition: 1s;*/
+}
 
 .wrapper {
   max-width: 850px;
@@ -28,12 +38,9 @@ margin: 0px;
 }
 
 header {
-  border-top: 1px solid;
   border-bottom: 1px solid;
   margin-bottom: 8px;
   padding: 0px 10px;
-}
-.topnav {
   max-width: 850px;
   margin: 0 auto;
 }
@@ -62,29 +69,37 @@ figcaption p  {font: 400 1.0rem/1.5 "Roboto";}
 /*Navbar*/
 .topnav {
   overflow: hidden;
-  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
 }
 .topnav a {
   float: right;
-  margin-top: 10px;
+
   padding: 14px 3px 14px 3px;
   text-decoration: none;
 }
 
 .topnav button {
   float: right;
-  margin-top: 10px;
+
   padding: 14px 3px 14px 3px;
   text-decoration: none;
   width: 24px;
   height: 24px;
 }
 .home {
-  position: absolute;
-  float: left;
+  /*position: absolute;*/
+ /* float: left;*/
 }
-.ref {
+/*.ref {
   margin:0px 4%;
+}
+*/
+.btn-toggle {
+  transition: 1s;
+}
+.btn-toggle:hover {
+  
 }
 
 /*Home page*/
