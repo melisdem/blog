@@ -57,6 +57,7 @@ time          {font: 700 1.0rem/1.2 "Roboto";}
 h3            {font: 700 1.0rem/1.2 "Roboto";}
 p             {font: 400 1.0rem/1.5 "Roboto";}
 figcaption p  {font: 400 1.0rem/1.5 "Roboto";}
+#tag, #cat  {font: 400 1.0rem/1.5 "Roboto";}
 
 
 @media (max-width:  800px) { :root { font-size: 18px; } }
@@ -146,21 +147,7 @@ figure.wide * {
 
 /*Tags and Categories*/
 
-.tags {
+#tag, #cat {
   display: flex;
-}
 
-.tags img {
-  padding: 0.75rem;
-  width: 1.50rem;
-  height: 1.50rem;
 }
-#tag>li {
-  float: left;
-  margin-bottom: 5px;
-}
-#cat>li {
-  float: left;
-  margin-bottom: 5px;
-}
-

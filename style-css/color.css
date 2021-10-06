@@ -3,16 +3,18 @@ body {
   --bkg-color: #FFFBF7;
   --title-color: #4F3F16;
   --time-color: #342807;
+  --brightness:  1;
 }
 body.dark-theme {
   --text-color: #C6B5A6;
   --bkg-color: #201C18;
   --title-color: #D3C8AB;
   --time-color:#A58F7D;
+  --brightness:  0.7;
 }
 
 @media (prefers-color-scheme: dark) {
-  /* defaults to dark theme */
+   defaults to dark theme 
   body {
     --text-color: #C6B5A6;
     --bkg-color: #201C18;
@@ -39,4 +41,8 @@ body {
 
 time {
   color: var(--time-color);
+}
+
+figure {
+  filter: brightness(var(--brightness));
 }
