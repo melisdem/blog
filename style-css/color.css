@@ -3,6 +3,7 @@ body {
   --bkg-color: #FFFBF7;
   --title-color: #4F3F16;
   --time-color: #342807;
+  --active-btn-color: #342807;
   --brightness:  1;
 }
 body.dark-theme {
@@ -10,6 +11,7 @@ body.dark-theme {
   --bkg-color: #201C18;
   --title-color: #D3C8AB;
   --time-color:#A58F7D;
+  --active-btn-color:#A58F7D;
   --brightness:  0.7;
 }
 
@@ -46,3 +48,4 @@ time {
 figure {
   filter: brightness(var(--brightness));
 }
+

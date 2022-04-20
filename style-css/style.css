@@ -57,7 +57,7 @@ time          {font: 700 1.0rem/1.2 "Roboto";}
 h3            {font: 700 1.0rem/1.2 "Roboto";}
 p             {font: 400 1.0rem/1.5 "Roboto";}
 figcaption p  {font: 400 1.0rem/1.5 "Roboto";}
-#tag, #cat  {font: 400 1.0rem/1.5 "Roboto";}
+#tag, #serie  {font: 400 1.0rem/1.5 "Roboto";}
 
 
 @media (max-width:  800px) { :root { font-size: 18px; } }
@@ -145,9 +145,61 @@ figure.wide * {
   }
 }
 
-/*Tags and Categories*/
+/*Tags and Series*/
 
-#tag, #cat {
+#tag, #serie {
   display: flex;
 
+}
+
+/*tooltips for description*/
+
+.tooltip {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+/*  top: -5px;
+  right: 105%;*/
+}
+.tooltip::after {
+  content: " ";
+  position: absolute;
+  top: 50%;
+  left: 100%; /* To the right of the tooltip */
+  margin-top: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent transparent black;
+}
+
+li:hover .tooltip {
+  visibility: visible;
+  transition-delay: 0.7s;
+}
+
+li {
+  margin-bottom: 20px; /*todo-oranla*/
+}
+
+.sorting button {
+  margin: 10px 10px 10px 0px;
+}
+
+.active, #active {
+  font-weight: bold;
+}
+
+.postOfSerie {
+  margin-left: 5%;
+}
+.postOfSerie > h1 {
+  font: 400 1.5rem/1.2 "Roboto";
 }
