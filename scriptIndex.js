@@ -5,7 +5,7 @@ let postObj = [
     fileName:"show",
     datetime:"2021-08-20",
     time:"Aug. 20, 2021",
-    definition:"Or to be or not to be",
+    definition:"Lorem, ipsum, dolor sit amet consectetur adipisicing elit. Itaque debitis impedit, reiciendis atque praesentium quod, eius incidunt. Sequi quaerat dolorem quasi, nostrum, nisi neque labore nobis beatae, maiores perferendis facere!",
     tags:["Tag 1", "Tag 2"],
     series:"Serie A"
   },
@@ -14,7 +14,7 @@ let postObj = [
     fileName:"post1",
     datetime:"2021-09-22",
     time:"Sep. 22,2021",
-    definition:"To be or not to be",
+    definition:"Lorem, ipsum, dolor sit amet consectetur adipisicing elit. Itaque debitis impedit, reiciendis atque praesentium quod, eius incidunt.",
     tags:["Tag 3", "Tag 2"],
     series:"Serie A"
   },
@@ -23,7 +23,7 @@ let postObj = [
     fileName:"post1",
     datetime:"2021-09-22",
     time:"Sep. 22,2021",
-    definition:"To be or not to be",
+    definition:"Lorem, ipsum, dolor sit amet consectetur adipisicing elit.",
     tags:["Tag 3", "Tag 4"],
     series:"Serie B"
   },
@@ -113,7 +113,7 @@ let showArchiveElement = function (listObj,list,className) {
     list.appendChild(liElm);
     let str =  `<h1><a href="../posts/${listObj.fileName}.html">${listObj.title}</a></h1>`+
       `<time datetime="${listObj.datetime}">${listObj.time}</time>`+
-      `<p class="tooltip">${listObj.definition}</p>`;
+      `<p class="tooltip"><span>${listObj.definition}</span></p>`;
     liElm.innerHTML = str;
 }
 

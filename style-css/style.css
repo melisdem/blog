@@ -144,22 +144,44 @@ figure.wide * {
 
 /*tooltips for description*/
 
-.tooltip {
-  visibility: hidden;
+.post {
   position: relative;
-  left: -10em;
-  top: -3em;
-  margin: 0;
 }
 
 li:hover .tooltip {
   visibility: visible;
-  transition-delay: 0.7s;
+  transition-delay: 0.3s;
+}
+
+@media only screen and (min-width: 1760px) {
+  p.tooltip {
+    visibility: hidden;
+    position: absolute;
+    float: right;
+    right: 103%;
+    top:10% ;
+    width: 50%;
+  }
+  p.tooltip>span {
+  float: right;
+  }
+}
+@media only screen and (min-width: 1650px) and (max-width: 1760px) {
+  p.tooltip {
+    visibility: hidden;
+    position: absolute;
+    float: right;
+    right: 103%;
+    top:10% ;
+    width: 43%;
+  }
+  p.tooltip>span {
+  float: right;
+  }
 }
 
 
-
-
+/*General*/
 .wrapper li {
   margin-bottom: 20px; /*todo-oranla*/
 }
@@ -178,3 +200,4 @@ li:hover .tooltip {
 .postOfSerie > h1 {
   font: 400 1.5rem/1.2 "Roboto";
 }
+
