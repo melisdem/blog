@@ -1,3 +1,3 @@
 # Simple Blog 
 
-https://melisdem.github.io/blog/dark/main-pages/index.html
+https://melisdem.github.io/blog/html/dark/main-pages/index.html
