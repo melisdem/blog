@@ -94,6 +94,11 @@ figcaption p  {font: 400 1.0rem/1.5 "Roboto";}
   margin-left: 0.5em
 }
 
+.topnav > .btn-toggle {
+  position: absolute;
+  left: 48%;
+}
+
 /*Home page*/
 .definition {
   margin-top: 10px;

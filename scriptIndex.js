@@ -20,7 +20,7 @@ let postObj = [
   },
   {
     title:"Post B1",
-    fileName:"post1",
+    fileName:"post2",
     datetime:"2021-09-22",
     time:"Sep. 22,2021",
     definition:"Lorem, ipsum, dolor sit amet consectetur adipisicing elit.",
@@ -29,7 +29,7 @@ let postObj = [
   },
   {
     title:"Post B2",
-    fileName:"post1",
+    fileName:"post3",
     datetime:"2021-09-22",
     time:"Sep. 22,2021",
     definition:"To be or not to be",
@@ -38,7 +38,7 @@ let postObj = [
   },
   {
     title:"Post B3",
-    fileName:"post1",
+    fileName:"post4",
     datetime:"2021-09-22",
     time:"Sep. 22,2021",
     definition:"To be or not to be",
@@ -47,7 +47,7 @@ let postObj = [
   },
   {
     title:"Post C1",
-    fileName:"post1",
+    fileName:"post5",
     datetime:"2021-09-22",
     time:"Sep. 22,2021",
     definition:"To be or not to be",
@@ -56,7 +56,7 @@ let postObj = [
   },
   {
     title:"Post D1",
-    fileName:"post1",
+    fileName:"post6",
     datetime:"2021-09-22",
     time:"Sep. 22,2021",
     definition:"To be or not to be",
@@ -65,7 +65,7 @@ let postObj = [
   },
   {
     title:"Post D2",
-    fileName:"post1",
+    fileName:"post7",
     datetime:"2021-09-22",
     time:"Sep. 22,2021",
     definition:"To be or not to be",
@@ -74,7 +74,7 @@ let postObj = [
   },
   {
     title:"Post no serie",
-    fileName:"post1",
+    fileName:"post8",
     datetime:"2021-09-22",
     time:"Sep. 22,2021",
     definition:"To be or not to be",
@@ -249,7 +249,8 @@ if (document.getElementById("series")) {
 
 if (seriesBtn) {
   seriesBtn.onclick = function() {
-    window.location.href=`file:///home/melis/Projects/Blog/html/${currentTheme}/main-pages/series.html`
+    // window.location.href=`file:///home/melis/Projects/Blog/html/${currentTheme}/main-pages/series.html`;
+    window.location.href=`https://melisdem.github.io/blog/html/${currentTheme}/main-pages/series.html`
   }
 }
 
@@ -269,8 +270,7 @@ let getTitle = (n) => {
 
 if (body.id == "show") {
   for (var i = 0; i < postObj.length; i++) {
-    body.setAttribute("id", `${postObj[i].fileName}`)
-    if (document.getElementById(`${postObj[i].fileName}`)) {
+    if (postObj[i].fileName == whichPost) {
       getTitle(i);
     };
   }
@@ -282,7 +282,8 @@ let clickSerie = document.getElementsByClassName("clickSerie")[0];
 
 if (clickSerie) {
   clickSerie.addEventListener("click", function () {
-    window.location.href=`file:///home/melis/Projects/Blog/html/${currentTheme}/main-pages/series.html`
+    // window.location.href=`file:///home/melis/Projects/Blog/html/${currentTheme}/main-pages/series.html`;
+    window.location.href=`https://melisdem.github.io/blog/html/${currentTheme}/main-pages/series.html`
   })
 }
 
@@ -312,10 +313,12 @@ if (clickSerie) {
   colorToggleBtn.addEventListener("click", function() {
     if (currentTheme == "dark") {
       currentTheme = "light";
-      window.location.href=`file:///home/melis/Projects/Blog/html/light/${page}`
+      // window.location.href=`file:///home/melis/Projects/Blog/html/light/${page}`;
+      window.location.href=`https://melisdem.github.io/blog/html/light/${page}`
     } else if(currentTheme == "light") {
       currentTheme == "dark";
-      window.location.href=`file:///home/melis/Projects/Blog/html/dark/${page}`
+      // window.location.href=`file:///home/melis/Projects/Blog/html/dark/${page}`;
+      window.location.href=`https://melisdem.github.io/blog/html/dark/${page}`
     }
   })
 
