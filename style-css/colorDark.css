@@ -1,0 +1,26 @@
+body {
+  --text-color: #C6B5A6;
+  --bkg-color: #201C18;
+  --title-color: #D3C8AB;
+  --time-color:#A58F7D;
+  --active-btn-color:#A58F7D;
+  --brightness:  0.7;
+}
+
+body {
+  background: var(--bkg-color);
+  color: var(--text-color);
+}
+
+.topnav, h1, li.postOfSerie::marker {
+  color: var(--title-color);
+}
+
+time {
+  color: var(--time-color);
+}
+
+figure {
+  filter: brightness(var(--brightness));
+}
+

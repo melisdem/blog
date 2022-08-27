@@ -49,8 +49,9 @@ header {
   margin-bottom: 3%;
 }
 
+
 /*Text font*/
-h1            {font: 700 2.0rem/1.2 "Roboto";}
+h1            {font: 700 1.7rem/1.2 "Roboto";}
 h2            {font: 400 1.5rem/1.2 "Roboto";}
 time          {font: 700 1.0rem/1.2 "Roboto";}
 h3            {font: 700 1.0rem/1.2 "Roboto";}
@@ -131,7 +132,7 @@ figure.wide * {
     width: 100%;
     height: 100%;  
   transform: unset;
-  margin: 0 auto;  
+  margin: 10% auto;  
   }
 }
 
@@ -144,46 +145,40 @@ figure.wide * {
 
 /*tooltips for description*/
 
-.post {
-  position: relative;
-}
 
-li:hover .tooltip {
+
+li.post:hover .tooltip {
+  visibility: visible;
+  transition-delay: 0.3s;
+}
+li.postOfSerie:hover .tooltip {
   visibility: visible;
   transition-delay: 0.3s;
 }
 
-@media only screen and (min-width: 1760px) {
+@media only screen and (min-width: 850px) {
+  .post {
+  width: 49%;
+  position: relative;
+  }
   p.tooltip {
     visibility: hidden;
     position: absolute;
-    float: right;
-    right: 103%;
-    top:10% ;
+    left: 119%;
+    top: 0.1%;
+    width: 92%;
+  }
+
+  li.postOfSerie {
     width: 50%;
-  }
-  p.tooltip>span {
-  float: right;
-  }
-}
-@media only screen and (min-width: 1650px) and (max-width: 1760px) {
-  p.tooltip {
-    visibility: hidden;
-    position: absolute;
-    float: right;
-    right: 103%;
-    top:10% ;
-    width: 43%;
-  }
-  p.tooltip>span {
-  float: right;
+    position: relative;
   }
 }
 
 
 /*General*/
 .wrapper li {
-  margin-bottom: 20px; /*todo-oranla*/
+  margin-bottom: 20px;
 }
 
 .sorting button {
@@ -201,3 +196,16 @@ li:hover .tooltip {
   font: 400 1.5rem/1.2 "Roboto";
 }
 
+li.postOfSerie::marker {
+  font: 400 1.5rem/1.2 "Roboto";
+}
+
+#titlePost {
+  margin-top: 2%;
+  margin-bottom: 4%;
+}
+
+#titlePost > h3 {
+  float: right;
+  padding: 1% 0px ;
+}

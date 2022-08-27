@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog</title>
+  <link rel="stylesheet" type="text/css" href="../../../style-css/style.css">
+  <link rel="stylesheet" type="text/css" href="../../../style-css/colorLight.css">
+  <link rel="stylesheet" type="text/css" href="../../../style-css/dedbug.css">
+    <style>
+    .archive {
+      font-weight: 900;
+    }
+  </style>
+  <script type="text/javascript">
+    let currentTheme = "light";
+    let page = "main-pages/archive.html";
+  </script>
+</head>
+<body id="archive">
+ <!-- Navbar -->
+  <header id="header"></header>
+  <!-- buttons  -->
+  <div class="wrapper">
+      <div class="sorting">
+        <button class="btn-sort active">Newest First</button>
+        <button class="btn-sort">Oldest First</button>
+        <button class="btn-sort">Series</button>      
+    </div>
+  </div>
+  <!-- Posts' List -->
+  <article class="wrapper">
+    <div class="title">
+      <ul id="post">
+      </ul>
+    </div>
+  </article>
+
+  <script type="text/javascript" src="../../../scriptIndex.js"></script>
+</body>
+</html>
+

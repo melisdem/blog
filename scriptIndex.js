@@ -1,13 +1,13 @@
 // list of posts
 let postObj = [
   {
-    title:"Lorem ipsum",
+    title:"Lorem, ipsum, dolor sit amet consectetur adipisicing elit. Itaque debitis impedit,",
     fileName:"show",
     datetime:"2021-08-20",
     time:"Aug. 20, 2021",
     definition:"Lorem, ipsum, dolor sit amet consectetur adipisicing elit. Itaque debitis impedit, reiciendis atque praesentium quod, eius incidunt. Sequi quaerat dolorem quasi, nostrum, nisi neque labore nobis beatae, maiores perferendis facere!",
     tags:["Tag 1", "Tag 2"],
-    series:"Serie A"
+    series:["Serie A", "1/2"]
   },
   {
     title:"Post A1",
@@ -16,7 +16,7 @@ let postObj = [
     time:"Sep. 22,2021",
     definition:"Lorem, ipsum, dolor sit amet consectetur adipisicing elit. Itaque debitis impedit, reiciendis atque praesentium quod, eius incidunt.",
     tags:["Tag 3", "Tag 2"],
-    series:"Serie A"
+    series:["Serie A", "2/2"]
   },
   {
     title:"Post B1",
@@ -25,7 +25,7 @@ let postObj = [
     time:"Sep. 22,2021",
     definition:"Lorem, ipsum, dolor sit amet consectetur adipisicing elit.",
     tags:["Tag 3", "Tag 4"],
-    series:"Serie B"
+    series:["Serie B", "1/3"]
   },
   {
     title:"Post B2",
@@ -34,7 +34,7 @@ let postObj = [
     time:"Sep. 22,2021",
     definition:"To be or not to be",
     tags:["Tag 5", "Tag 10"],
-    series:"Serie B"
+    series:["Serie B", "2/3"]
   },
   {
     title:"Post B3",
@@ -43,7 +43,7 @@ let postObj = [
     time:"Sep. 22,2021",
     definition:"To be or not to be",
     tags:["Tag 20", "Tag 21"],
-    series:"Serie B"
+    series:["Serie B", "3/3"]
   },
   {
     title:"Post C1",
@@ -52,7 +52,7 @@ let postObj = [
     time:"Sep. 22,2021",
     definition:"To be or not to be",
     tags:["Tag 21", "Tag 22"],
-    series:"Serie C"
+    series:["Serie C", "1/1"]
   },
   {
     title:"Post D1",
@@ -61,7 +61,7 @@ let postObj = [
     time:"Sep. 22,2021",
     definition:"To be or not to be",
     tags:["Tag 30", "Tag 20"],
-    series:"Serie D"
+    series:["Serie D", "1/2"]
   },
   {
     title:"Post D2",
@@ -70,7 +70,7 @@ let postObj = [
     time:"Sep. 22,2021",
     definition:"To be or not to be",
     tags:["Tag 31", "Tag 21"],
-    series:"Serie D"
+    series:["Serie D", "2/2"]
   },
   {
     title:"Post no serie",
@@ -83,9 +83,12 @@ let postObj = [
   }
 ];
 
-let tag1 = [];
+// let tag1 = [];
 
+// Dom elements
 let postsList = document.getElementById("post");
+let body = document.getElementsByTagName("body")[0];
+
 
 // all html header-navbar
 
@@ -202,8 +205,8 @@ let seriesBtn = document.getElementsByClassName("btn-sort")[2];
 
 let serieArr = [];
 for (var i = 0; i < postObj.length; i++) {
-  if (!serieArr.includes(postObj[i].series)) {
-    serieArr.push(postObj[i].series)
+  if (!serieArr.includes(postObj[i].series[0])) {
+    serieArr.push(postObj[i].series[0])
   }
 }
 
@@ -213,6 +216,11 @@ let createSeries = function (listObj) {
     postsList.appendChild(liElm);
     let str =  `<h1>${listObj}</h1>`;
     liElm.innerHTML = str;
+
+    let olElm = document.createElement("ol");
+    olElm.classList.add("ordered");
+    liElm.appendChild(olElm);
+
 }
 
 let showSeries = function (listObj) {
@@ -224,20 +232,24 @@ let showSeries = function (listObj) {
 let showPostElementsBySeries = function(){
   for (var i = 0; i < postObj.length; i++) {
     for (var j = 0; j < serieArr.length; j++) {
-      let listSeries = document.getElementsByClassName("postSeries")[j];
-      if (postObj[i].series != ""  && serieArr[j] == postObj[i].series) {
+      let listSeries = document.getElementsByClassName("ordered")[j];
+      if (postObj[i].series[0] != ""  && serieArr[j] == postObj[i].series[0]) {
         showArchiveElement(postObj[i], listSeries, "postOfSerie")
       }
     }
   }
 }
 
-if (seriesBtn) {
-  seriesBtn.onclick = function() {
-    postsList.innerHTML = "";
+if (document.getElementById("series")) {
+    // postsList.innerHTML = "";
     showSeries(serieArr);
     showPostElementsBySeries();
-    whichActive(this, btn);
+    whichActive(seriesBtn, btn);
+}
+
+if (seriesBtn) {
+  seriesBtn.onclick = function() {
+    window.location.href=`file:///home/melis/Projects/Blog/html/${currentTheme}/main-pages/series.html`
   }
 }
 
@@ -249,19 +261,30 @@ if (seriesBtn) {
 let getTitle = (n) => {
   let titlePost = document.getElementById("titlePost");
   titlePost.innerHTML =
+    `<h3 class="clickSerie" >${postObj[n].series[1]} ${postObj[n].series[0]}</h3>`+
+    `<br>`+
     `<h1>${postObj[n].title}</h1>`+
       `<p><time datetime="${postObj[n].datetime}">${postObj[n].time}</time></p>`
 }
 
-for (var i = 0; i < postObj.length; i++) {
-  if (document.getElementById(`${postObj[i].fileName}`)) {
-    getTitle(i);
-  };
+if (body.id == "show") {
+  for (var i = 0; i < postObj.length; i++) {
+    body.setAttribute("id", `${postObj[i].fileName}`)
+    if (document.getElementById(`${postObj[i].fileName}`)) {
+      getTitle(i);
+    };
+  }
 }
 
-// Create tag and series for show page
+// Create clickable series for show page
 
+let clickSerie = document.getElementsByClassName("clickSerie")[0];
 
+if (clickSerie) {
+  clickSerie.addEventListener("click", function () {
+    window.location.href=`file:///home/melis/Projects/Blog/html/${currentTheme}/main-pages/series.html`
+  })
+}
 
 // Filtering tags
 
@@ -286,26 +309,38 @@ for (var i = 0; i < postObj.length; i++) {
 
 
 // dark-light theme
-const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+  colorToggleBtn.addEventListener("click", function() {
+    if (currentTheme == "dark") {
+      currentTheme = "light";
+      window.location.href=`file:///home/melis/Projects/Blog/html/light/${page}`
+    } else if(currentTheme == "light") {
+      currentTheme == "dark";
+      window.location.href=`file:///home/melis/Projects/Blog/html/dark/${page}`
+    }
+  })
 
-const currentTheme = localStorage.getItem("theme");
-if (currentTheme == "dark") {
-  document.body.classList.toggle("dark-theme");
-} else if (currentTheme == "light") {
-  document.body.classList.toggle("light-theme");
-}
 
-colorToggleBtn.addEventListener("click", function () {
-  if (prefersDarkScheme.matches) {
-    document.body.classList.toggle("light-theme");
-    var theme = document.body.classList.contains("light-theme")
-      ? "light"
-      : "dark";
-  } else {
-    document.body.classList.toggle("dark-theme");
-    var theme = document.body.classList.contains("dark-theme")
-      ? "dark"
-      : "light";
-  }
-  localStorage.setItem("theme", theme);
-});
+
+// const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+
+// const currentTheme = localStorage.getItem("theme");
+// if (currentTheme == "dark") {
+//   document.body.classList.toggle("dark-theme");
+// } else if (currentTheme == "light") {
+//   document.body.classList.toggle("light-theme");
+// }
+
+// colorToggleBtn.addEventListener("click", function () {
+//   if (prefersDarkScheme.matches) {
+//     document.body.classList.toggle("light-theme");
+//     var theme = document.body.classList.contains("light-theme")
+//       ? "light"
+//       : "dark";
+//   } else {
+//     document.body.classList.toggle("dark-theme");
+//     var theme = document.body.classList.contains("dark-theme")
+//       ? "dark"
+//       : "light";
+//   }
+//   localStorage.setItem("theme", theme);
+// });
