@@ -57,8 +57,6 @@ time          {font: 700 1.0rem/1.2 "Roboto";}
 h3            {font: 700 1.0rem/1.2 "Roboto";}
 p             {font: 400 1.0rem/1.5 "Roboto";}
 figcaption p  {font: 400 1.0rem/1.5 "Roboto";}
-#tag, #serie  {font: 400 1.0rem/1.5 "Roboto";}
-
 
 @media (max-width:  800px) { :root { font-size: 18px; } }
 @media (max-width:  500px) { :root { font-size: 16px; } }
@@ -76,18 +74,6 @@ figcaption p  {font: 400 1.0rem/1.5 "Roboto";}
 
 .topnav button svg {
   width: 1.5em;
-}
-
-.topnav > * {
-  display: flex;
-}
-
-.topnav a.home {
-  margin-right: auto;
-}
-
-.topnav div.right-end {
-  margin-left: auto;
 }
 
 .topnav a.archive {
@@ -139,13 +125,6 @@ figure.wide * {
   transform: unset;
   margin: 10% auto;  
   }
-}
-
-/*Tags and Series*/
-
-#tag, #serie {
-  display: flex;
-
 }
 
 /*tooltips for description*/
@@ -213,4 +192,14 @@ li.postOfSerie::marker {
 #titlePost > h3 {
   float: right;
   padding: 1% 0px ;
+}
+
+#tagUl {
+  display: flex;
+  align-items: center;
+}
+
+li.tagsList {
+  margin-right: 8%;
+  margin-bottom: 10%;
 }

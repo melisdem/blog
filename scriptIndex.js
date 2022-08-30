@@ -6,7 +6,7 @@ let postObj = [
     datetime:"2021-08-20",
     time:"Aug. 20, 2021",
     definition:"Lorem, ipsum, dolor sit amet consectetur adipisicing elit. Itaque debitis impedit, reiciendis atque praesentium quod, eius incidunt. Sequi quaerat dolorem quasi, nostrum, nisi neque labore nobis beatae, maiores perferendis facere!",
-    tags:["Tag 1", "Tag 2"],
+    tags:["Tag1", "Tag2", "Tag3"],
     series:["Serie A", "1/2"]
   },
   {
@@ -15,7 +15,7 @@ let postObj = [
     datetime:"2021-09-22",
     time:"Sep. 22,2021",
     definition:"Lorem, ipsum, dolor sit amet consectetur adipisicing elit. Itaque debitis impedit, reiciendis atque praesentium quod, eius incidunt.",
-    tags:["Tag 3", "Tag 2"],
+    tags:["Tag3", "Tag2"],
     series:["Serie A", "2/2"]
   },
   {
@@ -24,7 +24,7 @@ let postObj = [
     datetime:"2021-09-22",
     time:"Sep. 22,2021",
     definition:"Lorem, ipsum, dolor sit amet consectetur adipisicing elit.",
-    tags:["Tag 3", "Tag 4"],
+    tags:["Tag3", "Tag4"],
     series:["Serie B", "1/3"]
   },
   {
@@ -33,7 +33,7 @@ let postObj = [
     datetime:"2021-09-22",
     time:"Sep. 22,2021",
     definition:"To be or not to be",
-    tags:["Tag 5", "Tag 10"],
+    tags:["Tag5", "Tag10"],
     series:["Serie B", "2/3"]
   },
   {
@@ -42,7 +42,7 @@ let postObj = [
     datetime:"2021-09-22",
     time:"Sep. 22,2021",
     definition:"To be or not to be",
-    tags:["Tag 20", "Tag 21"],
+    tags:["Tag20", "Tag21","Tag50", "Tag51"],
     series:["Serie B", "3/3"]
   },
   {
@@ -51,7 +51,7 @@ let postObj = [
     datetime:"2021-09-22",
     time:"Sep. 22,2021",
     definition:"To be or not to be",
-    tags:["Tag 21", "Tag 22"],
+    tags:["Tag21", "Tag22"],
     series:["Serie C", "1/1"]
   },
   {
@@ -60,7 +60,7 @@ let postObj = [
     datetime:"2021-09-22",
     time:"Sep. 22,2021",
     definition:"To be or not to be",
-    tags:["Tag 30", "Tag 20"],
+    tags:["Tag30", "Tag20"],
     series:["Serie D", "1/2"]
   },
   {
@@ -69,7 +69,7 @@ let postObj = [
     datetime:"2021-09-22",
     time:"Sep. 22,2021",
     definition:"To be or not to be",
-    tags:["Tag 31", "Tag 21"],
+    tags:["Tag31", "Tag21"],
     series:["Serie D", "2/2"]
   },
   {
@@ -78,17 +78,15 @@ let postObj = [
     datetime:"2021-09-22",
     time:"Sep. 22,2021",
     definition:"To be or not to be",
-    tags:["Tag 8", "Tag 10"],
+    tags:["Tag8", "Tag10"],
     series:""
   }
 ];
 
-// let tag1 = [];
-
 // Dom elements
 let postsList = document.getElementById("post");
 let body = document.getElementsByTagName("body")[0];
-
+let footer = document.getElementsByClassName("footer");
 
 // all html header-navbar
 
@@ -167,37 +165,6 @@ function whichActive(button, btnArray) {
     button.classList.add("active");
   }
 }
-// function sorting() {
-//   for (var i = 0; i < btn.length; i++) {
-//     btn[i].onclick = function() {
-//       console.log(this)
-//       for (var j = 0; j < btn.length; j++) {
-//         btn[j].classList.remove("active")
-//       }
-//       this.classList.add("active")
-//       if (i===0) {
-//         console.log("jdfjdsf")
-//       }
-
-//     }
-//   }
-// }
-// sorting();
-// if (btn) {
-//   btn.onclick = function() {
-//     if (btn.innerHTML === "Sort oldest to newest" ) {
-//       btn.innerHTML = "Sort newest to oldest";
-//       postsList.innerHTML = "";
-//       getPostsReverse(postObj.length, postObj);
-//       filterTag(getPostsReverse);
-//     } else {
-//       btn.innerHTML = "Sort oldest to newest"
-//       postsList.innerHTML = "";
-//       getPosts(postObj.length, postObj);
-//       filterTag(getPosts);
-//     }
-//   }
-// }
 
 // Filtering Series
 
@@ -205,7 +172,7 @@ let seriesBtn = document.getElementsByClassName("btn-sort")[2];
 
 let serieArr = [];
 for (var i = 0; i < postObj.length; i++) {
-  if (!serieArr.includes(postObj[i].series[0])) {
+  if (postObj[i].series[0] && !serieArr.includes(postObj[i].series[0])) {
     serieArr.push(postObj[i].series[0])
   }
 }
@@ -220,7 +187,6 @@ let createSeries = function (listObj) {
     let olElm = document.createElement("ol");
     olElm.classList.add("ordered");
     liElm.appendChild(olElm);
-
 }
 
 let showSeries = function (listObj) {
@@ -229,9 +195,9 @@ let showSeries = function (listObj) {
   }
 }
 
-let showPostElementsBySeries = function(){
+let showPostElementsBySeries = function(serieArray){
   for (var i = 0; i < postObj.length; i++) {
-    for (var j = 0; j < serieArr.length; j++) {
+    for (var j = 0; j < serieArray.length; j++) {
       let listSeries = document.getElementsByClassName("ordered")[j];
       if (postObj[i].series[0] != ""  && serieArr[j] == postObj[i].series[0]) {
         showArchiveElement(postObj[i], listSeries, "postOfSerie")
@@ -241,21 +207,17 @@ let showPostElementsBySeries = function(){
 }
 
 if (document.getElementById("series")) {
-    // postsList.innerHTML = "";
     showSeries(serieArr);
-    showPostElementsBySeries();
+    showPostElementsBySeries(serieArr);
     whichActive(seriesBtn, btn);
 }
 
 if (seriesBtn) {
   seriesBtn.onclick = function() {
-    // window.location.href=`file:///home/melis/Projects/Blog/html/${currentTheme}/main-pages/series.html`;
-    window.location.href=`https://melisdem.github.io/blog/html/${currentTheme}/main-pages/series.html`
+    window.location.href=`file:///home/melis/Projects/Blog/html/${currentTheme}/main-pages/series.html`;
+    // window.location.href=`https://melisdem.github.io/blog/html/${currentTheme}/main-pages/series.html`
   }
 }
-
-
-
 
 // Create title for show page
 
@@ -282,68 +244,55 @@ let clickSerie = document.getElementsByClassName("clickSerie")[0];
 
 if (clickSerie) {
   clickSerie.addEventListener("click", function () {
-    // window.location.href=`file:///home/melis/Projects/Blog/html/${currentTheme}/main-pages/series.html`;
-    window.location.href=`https://melisdem.github.io/blog/html/${currentTheme}/main-pages/series.html`
+    window.location.href=`file:///home/melis/Projects/Blog/html/${currentTheme}/main-pages/series.html`;
+    // window.location.href=`https://melisdem.github.io/blog/html/${currentTheme}/main-pages/series.html`
   })
 }
 
-// Filtering tags
+// Footer for showpage
+  // For tags
+    let tagUl = document.getElementById("tagUl");
+    let createTags = function(listObj) {
+      let liElm = document.createElement("li");
+      liElm.classList.add("tagsList");
+      tagUl.appendChild(liElm);
+      let str = `<p><a href="../main-pages/${listObj}.html">${listObj}</a></p>`;
+      liElm.innerHTML = str;
+    }
+    
+    if (body.id == "show") {
+      for (var i = 0; i < postObj.length; i++) {
+        if (postObj[i].fileName == whichPost) {
+          for (var j = 0; j < postObj[i].tags.length; j++) {
+            createTags(postObj[i].tags[j]);
+          };
+        };
+      }
+    }
 
-// let tagBtn = document.getElementById("tag");
+  // For series
+    let selectedSeries = [];
 
-// let filterTag = function (fun) {
-//   for (var i = 0; i < tagBtn.length; i++) {
-//     tagBtn[i].onclick = function() {
-//       let filteredPosts = [];
-//       for (var j = 0; j < postObj.length; j++) {
-//         if (postObj[j].tags.includes(this.value)) {
-//           filteredPosts.push(postObj[j]);
-//         };
-//       }
-//       postsList.innerHTML = "";
-//       return fun(filteredPosts.length, filteredPosts)
-//     };
-//   }
-// }
-// filterTag(getPosts);
+    for (var i = 0; i < postObj.length; i++) {
+      if (postObj[i].fileName == whichPost) {
+        selectedSeries.push(postObj[i].series[0]);
+      }
+    }
 
-
+    if (document.getElementById("show")) {
+        showSeries(selectedSeries);
+        showPostElementsBySeries(selectedSeries);
+    }
 
 // dark-light theme
   colorToggleBtn.addEventListener("click", function() {
     if (currentTheme == "dark") {
       currentTheme = "light";
-      // window.location.href=`file:///home/melis/Projects/Blog/html/light/${page}`;
-      window.location.href=`https://melisdem.github.io/blog/html/light/${page}`
+      window.location.href=`file:///home/melis/Projects/Blog/html/light/${page}`;
+      // window.location.href=`https://melisdem.github.io/blog/html/light/${page}`
     } else if(currentTheme == "light") {
       currentTheme == "dark";
-      // window.location.href=`file:///home/melis/Projects/Blog/html/dark/${page}`;
-      window.location.href=`https://melisdem.github.io/blog/html/dark/${page}`
+      window.location.href=`file:///home/melis/Projects/Blog/html/dark/${page}`;
+      // window.location.href=`https://melisdem.github.io/blog/html/dark/${page}`
     }
   })
-
-
-
-// const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
-
-// const currentTheme = localStorage.getItem("theme");
-// if (currentTheme == "dark") {
-//   document.body.classList.toggle("dark-theme");
-// } else if (currentTheme == "light") {
-//   document.body.classList.toggle("light-theme");
-// }
-
-// colorToggleBtn.addEventListener("click", function () {
-//   if (prefersDarkScheme.matches) {
-//     document.body.classList.toggle("light-theme");
-//     var theme = document.body.classList.contains("light-theme")
-//       ? "light"
-//       : "dark";
-//   } else {
-//     document.body.classList.toggle("dark-theme");
-//     var theme = document.body.classList.contains("dark-theme")
-//       ? "dark"
-//       : "light";
-//   }
-//   localStorage.setItem("theme", theme);
-// });
