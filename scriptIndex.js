@@ -288,11 +288,11 @@ if (clickSerie) {
   colorToggleBtn.addEventListener("click", function() {
     if (currentTheme == "dark") {
       currentTheme = "light";
-      window.location.href=`file:///home/melis/Projects/Blog/html/light/${page}`;
-      // window.location.href=`https://melisdem.github.io/blog/html/light/${page}`
+      // window.location.href=`file:///home/melis/Projects/Blog/html/light/${page}`;
+      window.location.href=`https://melisdem.github.io/blog/html/light/${page}`
     } else if(currentTheme == "light") {
       currentTheme == "dark";
-      window.location.href=`file:///home/melis/Projects/Blog/html/dark/${page}`;
-      // window.location.href=`https://melisdem.github.io/blog/html/dark/${page}`
+      // window.location.href=`file:///home/melis/Projects/Blog/html/dark/${page}`;
+      window.location.href=`https://melisdem.github.io/blog/html/dark/${page}`
     }
   })
