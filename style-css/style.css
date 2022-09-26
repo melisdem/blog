@@ -27,7 +27,8 @@ button {
 
 /*General Alignment*/
 body {
-  overflow: overlay;
+  overflow: scroll;
+  overflow-x: hidden;
 }
 
 .wrapper {
@@ -77,7 +78,8 @@ figcaption p  {font: 400 1.0rem/1.5 "Roboto";}
 }
 
 .topnav a.archive {
-  margin-left: 0.5em
+  width: 67px;
+  padding-left: 15px;
 }
 
 .topnav > .btn-toggle {

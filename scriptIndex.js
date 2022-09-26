@@ -214,8 +214,8 @@ if (document.getElementById("series")) {
 
 if (seriesBtn) {
   seriesBtn.onclick = function() {
-    window.location.href=`file:///home/melis/Projects/Blog/html/${currentTheme}/main-pages/series.html`;
-    // window.location.href=`https://melisdem.github.io/blog/html/${currentTheme}/main-pages/series.html`
+    // window.location.href=`file:///home/melis/Projects/Blog/html/${currentTheme}/main-pages/series.html`;
+    window.location.href=`https://melisdem.github.io/blog/html/${currentTheme}/main-pages/series.html`
   }
 }
 
@@ -244,8 +244,7 @@ let clickSerie = document.getElementsByClassName("clickSerie")[0];
 
 if (clickSerie) {
   clickSerie.addEventListener("click", function () {
-    window.location.href=`file:///home/melis/Projects/Blog/html/${currentTheme}/main-pages/series.html`;
-    // window.location.href=`https://melisdem.github.io/blog/html/${currentTheme}/main-pages/series.html`
+    window.scrollTo(0, document.body.scrollHeight);
   })
 }
 
